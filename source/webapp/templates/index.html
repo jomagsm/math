@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<form>
+    {% csrf_token %}
+    <input type="number" name="a">
+    <input type="number" name="b">
+    <button name="add">+</button>
+    <button name="subtract">-</button>
+    <button name="multiply">*</button>
+    <button name="divide">/</button>
+    <p id="result"></p>
+</form>
+<script src="../static/js/index.js"></script>
+</body>
+</html>

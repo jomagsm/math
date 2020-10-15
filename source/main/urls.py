@@ -14,8 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from api_v1.views import math, get_token_view
+from webapp.views import Index_View_v2
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', Index_View_v2.as_view(), name='index'),
+    path('add/', math),
+    path('subtract/', math),
+    path('multiply/', math),
+    path('divide/', math),
+    path('get_token/', get_token_view)
 ]
